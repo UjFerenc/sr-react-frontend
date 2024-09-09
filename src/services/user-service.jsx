@@ -4,21 +4,26 @@ import env from "react-dotenv";
 
 const user = signal(localStorage.getItem('user') && JSON.parse(localStorage.getItem('user')))
 
-async function login(email, password) {
-    return axios.post(
-        env.API_URL + '/user/login',
-        {
-            email,
-            password
-        }
-    ).then(response => {
-        user.value = response.data
+function login(email, password) {
+    return new Promise((resolve,reject) => {
+        axios.post(
+            env.API_URL + '/user/login',
+            {
+                email,
+                password
+            }
+        ).then(res =>{
+            user.value = res.data
+            localStorage.setItem('user',JSON.stringify(res.data))
+
+            resolve(res)
+        }).catch(err => reject(err))
     })
 }
 
-async function register(email, password) {
+function register(email, password) {
     try {
-        const registerResponse = await axios.post(
+        return axios.post(
             env.API_URL + '/user/register',
             {
                 email,
