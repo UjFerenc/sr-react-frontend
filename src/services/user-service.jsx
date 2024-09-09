@@ -12,9 +12,9 @@ function login(email, password) {
                 email,
                 password
             }
-        ).then(res =>{
+        ).then(res => {
             user.value = res.data
-            localStorage.setItem('user',JSON.stringify(res.data))
+            localStorage.setItem('user', JSON.stringify(res.data))
 
             resolve(res)
         }).catch(err => reject(err))
@@ -22,17 +22,15 @@ function login(email, password) {
 }
 
 function register(email, password) {
-    try {
-        return axios.post(
+    return new Promise((resolve,reject) => {
+        axios.post(
             env.API_URL + '/user/register',
             {
                 email,
                 password
             }
-        )
-    } catch (error) {
-        console.log(error)
-    }
+        ).then(res => resolve(res)).catch(err => reject(err))
+    })
 }
 
 export { login, register, user as loggedIn }
