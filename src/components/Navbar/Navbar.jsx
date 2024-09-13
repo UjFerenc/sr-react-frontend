@@ -1,12 +1,12 @@
-import React, { useContext, useState } from 'react'
+import React from 'react'
 import './Navbar.scss';
-import { Link } from 'react-router-dom';
-import { LoginContext } from '../../App';
-import { signal } from '@preact/signals-core';
+import { Link, useNavigate } from 'react-router-dom';
 
-import { loggedIn } from '../../services/user-service';
+import { loggedIn, logout } from '../../services/user-service';
 
 const Navbar = () => {
+    const navigation = useNavigate()
+
     return (
         <nav className="navbar navbar-dark navbar-expand-lg bg-dark">
 
@@ -21,19 +21,30 @@ const Navbar = () => {
                     <Link className="nav-link" to="/">Home</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to="/#">Lore</Link>
+                    <Link className="nav-link" to="/lore">Lore</Link>
                 </li>
             </ul>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li className="nav-item" >
-                    <Link  className="nav-link" to={loggedIn.value !== null? "profile": "login"}>{ loggedIn.value !== null? "Profile": "Login" }</Link>
-                </li>
+                <div className="dropdown">
+                    <li className="nav-item" id="profile">
+                        <Link  className="nav-link" to={loggedIn.value !== null? "profile": "login"}>{ loggedIn.value !== null? "Profile": "Login" }</Link>
+                    </li>
+                    {
+                        loggedIn.value && <ul class="dropdown-menu">
+                            <li><button className="dropdown-item"onClick={OnLogoutClick} href="#">Logout</button></li>
+                        </ul>
+                    }
+                </div>
             </ul>
             </div>
         </div>
         </nav>
-
   )
+
+  function OnLogoutClick() {
+    logout()
+    navigation('/#')
+  }
 }
 
 export default Navbar

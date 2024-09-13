@@ -5,6 +5,7 @@ import Layout from './Pages/Layout';
 import { createContext, useState } from 'react';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
+import Lore from './Pages/Lore/Lore';
 
 export const LoginContext = createContext(false);
 
@@ -17,6 +18,7 @@ function App() {
               <Route index element={<Home />} />
               <Route path='login'element={<Login />}/>
               <Route path='register'element={<Register />}/>
+              <Route path='lore' element={<Lore />}/>
           </Route>
       </Routes>
     </BrowserRouter>

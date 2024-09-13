@@ -33,4 +33,9 @@ function register(email, password) {
     })
 }
 
-export { login, register, user as loggedIn }
+function logout() {
+    localStorage.removeItem('user')
+    user.value = null;
+}
+
+export { login, register, logout, user as loggedIn }

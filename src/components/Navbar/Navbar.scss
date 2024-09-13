@@ -4,3 +4,10 @@
     color: $light;
 }
 
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown {
+  direction:rtl;
+}
