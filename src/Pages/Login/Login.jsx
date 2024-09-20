@@ -1,12 +1,15 @@
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../services/user-service"
 import { useState } from "react";
-
+import { useTranslation } from "react-i18next";
 
 
 function Login() {
-  let email = "";
-  let password = "";
+  const [t, i18n] = useTranslation("API");
+
+  console.log(t("ERR_NETWORK"));
+  let email = '';
+  let password = '';
 
   let [errorMessage, setErrorMessage] = useState(false);
 
@@ -18,15 +21,15 @@ function Login() {
             <form className="border px-2 py-2 rounded border-primary">
                 <h1>Login</h1>
                 <div className="form-group my-4 col-11 mx-auto">
-                    <input type="email" className="form-control" id="email" onChange={EmailOnChange} aria-describedby="emailHelp" placeholder="Enter email"/>
+                    <input type="email" className="form-control" onChange={(event)=> {email = event.target.value }} id="email" aria-describedby="emailHelp" placeholder="Enter email"/>
                 </div>
-                <div className="form-group my-4 col-11 mx-auto">
+                <div className="form-group mt-4 col-11 mx-auto">
                     <input type="password" className="form-control" onChange={(event)=> {password = event.target.value }} id="password" placeholder="Enter Password" />
                 </div>
-                {errorMessage ? <label>{errorMessage}</label> : null}
+                {errorMessage ? <div className="mx-auto col-11"><label className="text-warning">{t(errorMessage)}</label></div> : null}
                 <div>
                 </div>
-                <div>
+                <div className="mt-4 mb-2 mx-3">
                 <button className="btn btn-primary" onClick={OnSubmit} 
                   type="submit">
                     Login
@@ -44,20 +47,12 @@ function Login() {
 
   )
 
-function OnSubmit(event) {
-  event.preventDefault();
-  login(email, password).then((data)=>{navigation("/profile")}).catch(error => setErrorMessage(error.response.data));
-  console.log(errorMessage)
-}
-
-function EmailOnChange(event) {
-  email = event.target.value
-  console.log(email);
-}
+  function OnSubmit(event) {
+    event.preventDefault();
+    login(email, password).then((data)=>{navigation("/profile")}).catch(error => setErrorMessage(error.response?error.response.data.detail:error.code));
+    console.log(errorMessage)
+  }
 
 }
-
-
-
 
 export default Login

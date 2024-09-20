@@ -1,5 +1,12 @@
 {
     "API": {
-        "USER_NOT_FOUND": "IDFK"
+        "USER_NOT_FOUND": "No user registered with this e-mail adress",
+        "ERR_NETWORK": "Cannot connect to server",
+        "EMAIL_ALREADY_EXISTS": "Email adress is already taken",
+        "USER_DOES_NOT_EXISTS": "There is no user with this email adress",
+        "USER.LOGIN.BODY.EMAIL.VALUE_ERROR.ANY_STR.MIN_LENGTH": "Please enter an email adress",
+        "USER.LOGIN.BODY.PASSWORD.VALUE_ERROR.ANY_STR.MIN_LENGTH": "Please enter a password",
+        "USER.REGISTER.BODY.EMAIL.VALUE_ERROR.ANY_STR.MIN_LENGTH": "Please enter an email adress",
+        "USER.REGISTER.BODY.PASSWORD.VALUE_ERROR.ANY_STR.MIN_LENGTH": "Please enter a password"
     }
 }
