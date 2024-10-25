@@ -20,8 +20,6 @@ i18n
         }
     })
 
-console.log(localStorage.getItem('user'))
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
 

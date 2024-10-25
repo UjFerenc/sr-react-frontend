@@ -1,0 +1,89 @@
+.choosable-panel {
+    background-color: transparent;
+    height: 500px;
+}
+.choosable-panel-Human {
+    background-color: #b75600;
+}
+.choosable-panel-Human-image {
+    background-clip: border-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#race-select-human:hover .choosable-panel-Human-image {
+
+        background-image: url("../../../assets/images/Human.png");
+
+        animation-name: choosable-panel-hover;
+        animation-duration: 1s;
+    }
+    @keyframes choosable-panel-hover {
+        from {opacity: 0;}
+        to {opacity: 1;}
+}
+
+.choosable-panel-Lucus {
+    background-color: #04691f;
+}
+
+.choosable-panel-Lucus-image {
+    background-clip: border-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#race-select-Lucus:hover .choosable-panel-Lucus-image {
+        background-image: url("../../../assets/images/Lucus.png");
+
+        animation-name: choosable-panel-hover;
+        animation-duration: 1s;
+    }
+    @keyframes choosable-panel-hover {
+        from {opacity: 0;}
+        to {opacity: 1;}
+}
+
+.choosable-panel-Beastman {
+    background-color: #b61616;
+}
+
+.choosable-panel-Beastman-image {
+    background-clip: border-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.race-select-lucus:hover .choosable-panel-Beastman-image {
+        background-image: url("../../../assets/images/Beastman.png");
+
+        animation-name: choosable-panel-hover;
+        animation-duration: 1s;
+    }
+    @keyframes choosable-panel-hover {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
+
+.choosable-panel-Masquarus {
+    background-color: #2452bd;
+}
+
+.choosable-panel-Masquarus-image {
+    background-clip: border-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.choosable-panel-Masquarus-image:hover {
+        background-image: url("../../../assets/images/Masquarus.png");
+
+        animation-name: choosable-panel-hover;
+        animation-duration: 1s;
+    }
+    @keyframes choosable-panel-hover {
+        from {opacity: 0;}
+        to {opacity: 1;}
+}

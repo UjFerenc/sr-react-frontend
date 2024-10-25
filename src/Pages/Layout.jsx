@@ -1,7 +1,5 @@
 import { Outlet } from 'react-router-dom'
-import Navbar from '../components/Navbar/Navbar'
-import { useState } from 'react'
-import { LoginContext } from '../App'
+import Navbar from '../Components/Navbar/Navbar'
 
 const Layout = () => {
   return (

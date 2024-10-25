@@ -1,10 +1,10 @@
-import { Link, history, useNavigate } from "react-router-dom";
-import { register } from "../../services/user-service";
+import { Link, useNavigate } from "react-router-dom";
+import { register } from "../../Services/user-service";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const Register = () => {
-  const [t, i18n] = useTranslation("API");
+  const [t] = useTranslation("API");
   const navigation = useNavigate()
 
   let email = ''

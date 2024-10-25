@@ -2,7 +2,7 @@ import React from 'react'
 import './Navbar.scss';
 import { Link, useNavigate } from 'react-router-dom';
 
-import { loggedIn, logout } from '../../services/user-service';
+import { loggedIn, logout } from '../../Services/user-service';
 
 const Navbar = () => {
     const navigation = useNavigate()
