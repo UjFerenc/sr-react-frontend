@@ -8,5 +8,13 @@
         "USER.LOGIN.BODY.PASSWORD.VALUE_ERROR.ANY_STR.MIN_LENGTH": "Please enter a password",
         "USER.REGISTER.BODY.EMAIL.VALUE_ERROR.ANY_STR.MIN_LENGTH": "Please enter an email adress",
         "USER.REGISTER.BODY.PASSWORD.VALUE_ERROR.ANY_STR.MIN_LENGTH": "Please enter a password"
+    },
+    "CHARCREATION": {
+        "RACE": {
+            "Human": {
+                "DESC": "Humanity was created to mock the useless potencial of perfection. While the originators had the power to do anything, their lack of flaws would prevent them from doing anthing less than perfect. It shackeled their creativity into one narrow action. And so does humanity mirror that shackle. They have the potencial to achive anything, but all that potencial comes from their flaws, as soon as they overcome their human flaws, such as mortality, they lose their ability to break their own limits.",
+                "FEATS": "Class feats:\n                            Tier 1 Feats:\n                                - Infected with vampirism: You gain 1 lvl in the Vampire race, cant gain more levels in human anymore.\n                                - Human potential: add one to any stat and add one to any stat max.\n                                - Human cruelty: You gain advantage against any enemy under status effects.\n                                - Human kindness: Any healing you do heals bonus equal to your human level.\n                            Tier 2 Feats:\n                                - Master yourself: add half your human level (rounded up) to any hit roll\n                                - Master your enemy: add half of your human level rounded up to your armour bonus.\n                                - Human ingenuity: You can use any man made device.\n                            Tier 3 Feats:\n                                - Every man for himself: You can escape from any situation once in your lifetime, but if you are in combat with allies, everyone will know you betrayed them\n                                - Extreme human potential: +3 to any stat and +3 to any max stat\n                                - Human endurance: You are immune to all status effects."
+            }
+        }
     }
 }

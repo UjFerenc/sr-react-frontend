@@ -1,11 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
-import { login } from "../../services/user-service"
+import { login } from "../../Services/user-service"
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 
 function Login() {
-  const [t, i18n] = useTranslation("API");
+  const [t] = useTranslation("API");
 
   console.log(t("ERR_NETWORK"));
   let email = '';

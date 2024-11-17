@@ -1,0 +1,99 @@
+$race-1: "Human";
+$race-2: "Lucus";
+$race-3: "Beastman";
+$race-4: "Masquarus";
+
+$color-1: #b75600;
+$color-2: #04691f;
+$color-3: #b61616;
+$color-4: #2452bd;
+
+$races: $race-1, $race-2, $race-3, $race-4;
+$colors: $color-1, $color-2, $color-3, $color-4;
+
+.choosable-panel {
+    background-color: transparent;
+    height: 500px;
+}
+
+@for $i from 1 through length($races) {
+
+    .choosable-panel-#{nth($races, $i)} {
+        background-color: nth($colors, $i)
+    }
+    .choosable-panel-#{nth($races, $i)}-image {
+        background-clip: border-box;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    #race-select-#{to-lower-case(nth($races, $i))}:hover .choosable-panel-#{nth($races, $i)}-image {
+
+        background-image: url("../../../assets/images/#{nth($races, $i)}.png");
+
+        animation-name: choosable-panel-hover;
+        animation-duration: 1s;
+    }
+    @keyframes choosable-panel-hover {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
+    #race-select-#{to-lower-case(nth($races, $i))} {
+        h2 {
+            font-size: 30px;
+            transition: font-size 500ms;
+        }
+        display: block;
+        transition: width 1000ms;
+    }
+
+    #race-select-#{to-lower-case(nth($races, $i))}.selected {
+        width: 100%;
+    }
+
+    #race-select-#{to-lower-case(nth($races, $i))}.disapear {
+        h2 {
+            font-size: 0px;
+            transition: font-size 10ms 1490ms;
+        }
+        z-index: -1;
+        overflow: hidden;
+        width: 0px;
+        padding: 0px !important;
+    }
+
+    #race-select-#{to-lower-case(nth($races, $i))}.selected .choosable-panel-#{nth($races, $i)}-image {
+        background-image: url("../../../assets/images/#{nth($races, $i)}.png");
+        opacity: 1;
+        animation: none;
+    }
+}
+
+#race-select-human {
+ 
+}
+
+#grid {
+    display: grid;
+    grid-template-rows: 1fr;
+    transition: grid-template-rows 0.5s ease-out;
+}
+
+#hide-grid {
+    overflow: hidden;
+}
+
+#grid.confirmed {
+    transition: grid-template-rows 0.5s ease-out;
+    grid-template-rows: 0fr;    
+}
+
+.race-text {
+    white-space: pre-line;
+}
+
+#race-choices-div {
+    display: inline-flex;
+}
