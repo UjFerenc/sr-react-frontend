@@ -2,14 +2,16 @@ $race-1: "Human";
 $race-2: "Lucus";
 $race-3: "Beastman";
 $race-4: "Masquarus";
+$race-5: "Warrior";
 
 $color-1: #b75600;
 $color-2: #04691f;
 $color-3: #b61616;
 $color-4: #2452bd;
+$color-5: #b75600;
 
-$races: $race-1, $race-2, $race-3, $race-4;
-$colors: $color-1, $color-2, $color-3, $color-4;
+$races: $race-1, $race-2, $race-3, $race-4, $race-5;
+$colors: $color-1, $color-2, $color-3, $color-4, $color-5;
 
 .choosable-panel {
     background-color: transparent;

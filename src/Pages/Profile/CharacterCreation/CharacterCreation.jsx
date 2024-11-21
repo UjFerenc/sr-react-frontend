@@ -1,13 +1,16 @@
 import { signal } from '@preact/signals-core';
 import './CharacterCreation.scss'
 import RaceSelectCard from './Components/RaceSelectCard';
+import ArchetypeSelectCard from './Components/ArchetypeSelectCard';
 
 let selected_race = signal("")
+let selected_archetype = signal("")
 let race_confirmed = signal(false)
+let archetype_confirmed = signal(false)
 
 const CharacterCreation = () => {
     const races = ["Human", "Lucus", "Beastman", "Masquarus"]
-    const archetype = ["Warrior", "Rouge", "Spellcaster", "Craftsman"]
+    const archetypes = ["Warrior", "Rouge", "Spellcaster", "Craftsman"]
 
 
     return (
@@ -28,6 +31,18 @@ const CharacterCreation = () => {
                         </RaceSelectCard>
                     })}
                 </div>
+                {character_creation_step()>0?<div id="race-choices-div">
+                    {archetypes.map((archetype, index)=>{
+                        return <ArchetypeSelectCard 
+                            race={archetype}
+                            key={index}
+                            index={index}
+                            selected_archetype={selected_archetype}  
+                            archetype_confirmed={archetype_confirmed}
+                        >
+                        </ArchetypeSelectCard>
+                    })}
+                </div>:''}
             </div>
         </div>
     );
